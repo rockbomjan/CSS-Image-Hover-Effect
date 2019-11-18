@@ -1,0 +1,71 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #262626;
+}
+.container{
+    /* width: 1200px; */
+    width: 1280px;/*4.The yellow boxes cover the screen*/
+    /* min-height: 500px;/*5. Disabling the min-height and background color changes
+    the background colour black*/
+    /*background: #fff; */
+    margin: 70px auto;
+    display: flex;/*1.vertical left corner yellow box becomes top horizontal yellow box*/
+    flex-direction: row;
+    flex-wrap: wrap;/*3. The yellow horizontal 8 yellow big boxes cover the left portion.*/
+}
+.container .box{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background:#ff0;
+    margin: 10px;/*2. There are whitemargins between the top horizontal yellow boxes.*/
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.container .box .imgBox{
+    position: relative;
+    overflow: hidden;
+}
+.container .box .imgBox img{
+    max-width: 135%;/*6. image fits the yellow box. But need to test 
+    increasing or decreasing the value percent*/
+    transition: tranform 2s;
+    height: auto;
+}
+.container .box:hover .imgBox img{
+    transform: scale(1.2);/*7 Picture enlarge animation*/
+}
+.container .box .details{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    bottom:10px;
+    right: 10px;
+    background: rgba(0,0,0,.8); 
+    transform: scaleY(0);
+    transition: transform .5s;
+}
+.container .box:hover .details{
+    transform: scaleY(1);
+}
+.container .box .details .content{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    padding: 15px;
+    color: #fff;
+}
+.container .box .details .content h2{
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    color: #ff0;
+}
+.container .box .details .content p{
+    margin: 10px 0 0;
+    padding: 0;
+}
